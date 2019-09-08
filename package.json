@@ -1,0 +1,113 @@
+{
+  "name": "vue-slicksort",
+  "version": "1.1.3",
+  "description": "Set of mixins to turn any list into a sortable, touch-friendly, animated list",
+  "author": {
+    "name": "Jordan Simonds",
+    "email": "simonds.jordan@gmail.com"
+  },
+  "user": "jsimonds",
+  "homepage": "https://github.com/Jexordexan/vue-slicksort",
+  "main": "dist/vue-slicksort.cjs.js",
+  "module": "dist/vue-slicksort.esm.js",
+  "browser": "dist/vue-slicksort.umd.js",
+  "unpkg": "dist/vue-slicksort.min.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jexordexan/vue-slicksort.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jexordexan/vue-slicksort/issues"
+  },
+  "keywords": [
+    "vue",
+    "vuejs",
+    "vue-component",
+    "vue-mixin",
+    "sortable",
+    "sortable-list",
+    "list",
+    "sortable list",
+    "smooth",
+    "animated",
+    "mixin",
+    "component",
+    "react-sortable-hoc",
+    "vue-slicksort",
+    "vue-sort",
+    "vue-sortable",
+    "drag and drop",
+    "vue-slicksort"
+  ],
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.js",
+    "build": "npm run clean && npm run rollup",
+    "prepublishOnly": "npm run build",
+    "rollup": "cross-env BABEL_ENV=rollup rollup -c",
+    "clean": "rimraf dist/",
+    "test": "eslint src/** --ext .js",
+    "storybook": "start-storybook -s ./logo -p 8001 -c .storybook",
+    "build-storybook": "build-storybook -s ./logo -c .storybook -o .out",
+    "deploy:storybook": "storybook-to-ghpages",
+    "deploy:patch": "npm test && npm version patch && npm run deploy:final",
+    "deploy:final": "git push; git push --tags; npm publish; npm run deploy:storybook"
+  },
+  "peerDependencies": {
+    "vue": ">=2.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.3.9",
+    "@storybook/addon-options": "^3.4.4",
+    "@storybook/storybook-deployer": "^2.2.0",
+    "@storybook/vue": "^3.3.9",
+    "autoprefixer": "^6.3.6",
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.3.15",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-runtime": "^6.26.0",
+    "cross-env": "^1.0.7",
+    "css-loader": "^0.28.9",
+    "cssnano": "^3.10.0",
+    "eslint": "^4.15.0",
+    "eslint-plugin-import": "^2.0.1",
+    "eslint-plugin-vue": "^4.2.0",
+    "express": "^4.13.3",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.16.1",
+    "lodash": "^4.17.4",
+    "node-sass": "^3.7.0",
+    "postcss-loader": "^2.1.0",
+    "qs": "^6.2.0",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.5.2",
+    "rollup": "^0.54.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-uglify": "^2.0.1",
+    "sass-loader": "^6.0.6",
+    "stack-source-map": "^1.0.4",
+    "style-loader": "^0.13.1",
+    "vue": "^2.5.13",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0",
+    "webpack-dashboard": "^0.2.1",
+    "webpack-dev-server": "^2.11.0",
+    "webpack-hot-middleware": "^2.9.1"
+  },
+  "xo": {
+    "esnext": true,
+    "extends": "xo-react"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 4 versions"
+  ],
+  "files": [
+    "index.d.ts",
+    "dist/*"
+  ]
+}
